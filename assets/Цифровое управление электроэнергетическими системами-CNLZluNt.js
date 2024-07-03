@@ -1,0 +1,1 @@
+const _=[{regnum:300657,snils:"07031394530",total_mark:0,original:!1,priority:4,status:"Зарегистрирован",competition:"Основные места",compensation:"бюджетная основа"},{regnum:301657,snils:"16491136674",total_mark:0,original:!1,priority:3,status:"Зарегистрирован",competition:"Основные места",compensation:"бюджетная основа"}];export{_ as default};
