@@ -1,1 +1,0 @@
-const t=[{regnum:300337,snils:"14057546857",total_mark:0,original:!1,priority:1,status:"Зарегистрирован",competition:"Основные места",compensation:"бюджетная основа"},{regnum:302853,snils:"",total_mark:0,original:!1,priority:1,status:"Зарегистрирован",competition:"Основные места",compensation:"контрактная основа"}];export{t as default};
