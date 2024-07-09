@@ -1,1 +1,0 @@
-const _=[{regnum:299997,snils:"16015565944",total_mark:10,original:!1,priority:2,status:"Зарегистрирован",competition:"Основные места",compensation:"бюджетная основа"},{regnum:302818,snils:"15177354269",total_mark:15,original:!1,priority:4,status:"Зарегистрирован",competition:"Основные места",compensation:"бюджетная основа"}];export{_ as default};
