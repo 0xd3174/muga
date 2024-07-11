@@ -46,15 +46,15 @@ body {
 .entrants tr td {
   padding: 10px;
 }
-.entrants thead tr {
+.entrants thead td {
   background-color: #d8d8d8;
   font-weight: 500;
 }
-.entrants tbody tr:nth-child(even) {
+.entrants tbody td:nth-child(even) {
   background-color: #f3f3f3;
 }
 .entrants td {
-  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 .entrants tr td:last-child {
   border-right: none;

@@ -42,6 +42,7 @@ for (let programName of programsNames) {
 select.addEventListener('change', async (_e) => {
   tableHead.innerHTML = `
     <tr>
+        <td>#</td>
         <td>Номер</td>
         <td>СНИЛС</td>
         <td>Балл ЕГЭ</td>
@@ -58,22 +59,38 @@ select.addEventListener('change', async (_e) => {
   const entrants = program.default.sort((a: any, b: any) => b.total_mark - a.total_mark);
 
   tableBody.innerHTML = ''
+  let i = 0;
   for (let entrant of entrants) {
     if (goalC && entrant.competition === 'Целевая квота') continue;
     if (originalC && !entrant.original) continue;
     if (budgetC && entrant.compensation !== 'бюджетная основа') continue;
+    i++;
 
-    tableBody.innerHTML += `
-      <tr>
-        <td>${entrant.regnum}</td>
-        <td>${entrant.snils}</td>
-        <td>${entrant.total_mark}</td>
-        <td>${entrant.original ? 'Да' : 'Нет'}</td>
-        <td>${entrant.priority}</td>
-        <td>${entrant.status}</td>
-        <td>${entrant.competition}</td>
-        <td>${entrant.compensation}</td>
-      </tr>
-    `
+    const tr = document.createElement('tr');
+    const id = document.createElement('td'); id.innerHTML = i.toString();
+    const regnum = document.createElement('td'); regnum.innerHTML = entrant.regnum;
+    const snils = document.createElement('td'); snils.innerHTML = entrant.snils;
+    const total_mark = document.createElement('td'); total_mark.innerHTML = entrant.total_mark;
+    const original = document.createElement('td'); original.innerHTML = entrant.original ? 'Да' : 'Нет';
+    const priority = document.createElement('td'); priority.innerHTML = entrant.priority;
+    const status = document.createElement('td'); status.innerHTML = entrant.status;
+    const competition = document.createElement('td'); competition.innerHTML = entrant.competition;
+    const compensation = document.createElement('td'); compensation.innerHTML = entrant.compensation;
+
+    tr.append(id, regnum, snils, total_mark, original, priority, status, competition, compensation);
+    tableBody.appendChild(tr);
+
+    // tableBody.innerHTML += `
+    //   <tr>
+    //     <td>${entrant.regnum}</td>
+    //     <td>${entrant.snils}</td>
+    //     <td>${entrant.total_mark}</td>
+    //     <td>${entrant.original ? 'Да' : 'Нет'}</td>
+    //     <td>${entrant.priority}</td>
+    //     <td>${entrant.status}</td>
+    //     <td>${entrant.competition}</td>
+    //     <td>${entrant.compensation}</td>
+    //   </tr>
+    // `
   }
 });
